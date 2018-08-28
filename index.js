@@ -86,7 +86,7 @@ bot.on('message', message => {
         var help_embed = new Discord.RichEmbed()
         .setTitle("Commande d'Aide")
         .setColor('#00FFFF')
-        .addField("Liste des commandes: \n -/help \n -/infodiscord \n -/recrutements \n -/listeStaff \n -/boutique");
+        .addField("Liste des commandes: \n -/help \n -/infodiscord \n -/recrutements \n -/listeStaff \n -/boutique \n -/youtube");
         message.channel.sendEmbed(help_embed);
         console.log("Commande Help demandée !");
     }
