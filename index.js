@@ -102,6 +102,8 @@ bot.on('message', message => {
     }
     
     if(command === prefix + "kick") {
+        var array = [1, 2, 3, 4, 5];
+        var even = function(element) {
         // Cette commande est réservé aux Administrateurs et Modérateurs 
         if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
           return message.reply("Désolé tu n'a pas la permission !");
@@ -121,6 +123,7 @@ bot.on('message', message => {
         await member.kick(reason)
           .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
         message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
+        console.log(array.some(even));
     }
 /// commande youtube
     if (message.content === prefix+"youtube"){
