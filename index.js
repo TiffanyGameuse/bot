@@ -3,9 +3,9 @@ const bot = new Discord.Client();
 const configjson = require("./config.json")
 var prefix = (configjson.prefix)
 
-tokenbot = configjson.token
+//tokenbot = configjson.token
 
-bot.login(process.env.TOKEN);
+bot.login(process.env.KeyDiscord);
 
 bot.on('ready', function() {
     bot.user.setGame("Command: /help")
