@@ -3,9 +3,9 @@ const bot = new Discord.Client();
 const configjson = require("./config.json")
 var prefix = (configjson.prefix)
 
-//tokenbot = configjson.token
+tokenbot = configjson.token
 
-bot.login(process.env.KeyDiscord);
+bot.login(tokenbot)
 
 bot.on('ready', function() {
     bot.user.setGame("Command: /help")
@@ -54,8 +54,8 @@ bot.on('message', message => {
         .setColor("	#FF00FF")
         console.log("Commande Liste-staff demandé");
     message.channel.sendEmbed(embed)
-
     }
+
 /// commande sondage
     if(message.content.startsWith(prefix + "sondage")) {
         if(message.member.hasPermission("ADMINISTRATOR")) {
@@ -100,35 +100,13 @@ bot.on('message', message => {
         message.channel.sendEmbed(help_embed);
         console.log("Commande Boutique demandée !");
     }
-    
-    if(command === prefix + "kick") {
-        var array = [1, 2, 3, 4, 5];
-        var even = function(element) {
-        // Cette commande est réservé aux Administrateurs et Modérateurs 
-        if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
-          return message.reply("Désolé tu n'a pas la permission !");
-        
-        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-        if(!member)
-          return message.reply("Please mention a valid member of this server");
-        if(!member.kickable) 
-          return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
-        
-        let reason = args.slice(1).join(' ');
-        if(!reason) reason = "No reason provided";
-        
-        await member.kick(reason)
-          .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-        message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
-        console.log(array.some(even));
-    }
 /// commande youtube
     if (message.content === prefix+"youtube"){
         message.reply("\n Ma chaine Youtube Tiffany62 : https://www.youtube.com/channel/UCrNvVe7kV616Y0k7aXc822g?view_as=subscriber \n Ma chaine Youtube Tutoriels Gaming : https://www.youtube.com/channel/UC4TxyzXfn96UPSQJZqf-niA?view_as=subscriber");
         console.log("Commande Youtube effectué");
     }
 
-/// commande Salut
+    /// commande Salut
     if (message.content === "Salut"){
         message.reply("Bonjour comment vas tu ?.");
         console.log("Commande Salut effectué");
