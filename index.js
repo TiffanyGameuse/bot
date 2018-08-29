@@ -50,7 +50,7 @@ bot.on('message', message => {
     if(message.content === prefix + "listeStaff") {
         var embed = new Discord.RichEmbed()
         .setTitle("Liste du staff présents")
-        .addField("Liste-Staff", "-Adminstratrice: @TiffanyGameuse#2788 \n-Administrateur: \n-Dévellopeur Bot: @Frozz_Geek#3925 et @NonozgYtb#8258 \n-Modérateur: @D1SC0NNECT3D GAM3#6800 \n-Modérateur Test: ๑۩۞۩๑ƬΛЯΣX๑۩۞۩๑#1111 \n-Assistant: \n-Assistant Test: Un mec vachement sympa#3769 et @MvB51Gaming#4311")
+        .addField("Liste-Staff", "-Adminstratrice: 205035615748620290 \n-Administrateur: \n-Dévellopeur Bot: @Frozz_Geek#3925 et @NonozgYtb#8258 \n-Modérateur: @D1SC0NNECT3D GAM3#6800 \n-Modérateur Test: ๑۩۞۩๑ƬΛЯΣX๑۩۞۩๑#1111 \n-Assistant: \n-Assistant Test: Un mec vachement sympa#3769 et @MvB51Gaming#4311")
         .setColor("	#FF00FF")
         console.log("Commande Liste-staff demandé");
     message.channel.sendEmbed(embed)
