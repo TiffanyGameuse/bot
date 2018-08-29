@@ -105,14 +105,19 @@ bot.on('message', message => {
         message.reply("\n Ma chaine Youtube Tiffany62 : https://www.youtube.com/channel/UCrNvVe7kV616Y0k7aXc822g?view_as=subscriber \n Ma chaine Youtube Tutoriels Gaming : https://www.youtube.com/channel/UC4TxyzXfn96UPSQJZqf-niA?view_as=subscriber");
         console.log("Commande Youtube effectué");
     }
+/// commande Don
+    if (message.content === prefix+ "paypal"){
+        message.reply("Voici le lien Paypal pour faire un don : paypal.me/tiffany62")
+        console.log("Commande paypal effectué");
+    }
 
-    /// commande Salut
+/// commande Salut
     if (message.content === "Salut"){
         message.reply("Bonjour comment vas tu ?.");
         console.log("Commande Salut effectué");
     }
  
-    if (message.content === "Bien et toi"){
+    if (message.content === "bien et toi"){
         message.reply("bien merci");
         console.log("Commande effectué");
     }
