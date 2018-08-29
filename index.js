@@ -57,7 +57,7 @@ bot.on('message', message => {
 
     }
     
-    if(command === "kick") {
+    if(command === prefix + "kick") {
         // Cette commande est réservé aux Administrateurs et Modérateurs 
         if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
           return message.reply("Désolé tu n'a pas la permission !");
