@@ -56,28 +56,6 @@ bot.on('message', message => {
     message.channel.sendEmbed(embed)
 
     }
-    
-    if(command === prefix + "kick") {
-        // Cette commande est réservé aux Administrateurs et Modérateurs 
-        if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
-          return message.reply("Désolé tu n'a pas la permission !");
-        
-        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-        if(!member)
-          return message.reply("Please mention a valid member of this server");
-        if(!member.kickable) 
-          return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
-        
-        // slice(1) removes the first part, which here should be the user mention or ID
-        // join(' ') takes all the various parts to make it a single string.
-        let reason = args.slice(1).join(' ');
-        if(!reason) reason = "No reason provided";
-        
-        // Now, time for a swift kick in the nuts!
-        await member.kick(reason)
-          .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-        message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
-    }
 /// commande sondage
     if(message.content.startsWith(prefix + "sondage")) {
         if(message.member.hasPermission("ADMINISTRATOR")) {
@@ -121,6 +99,28 @@ bot.on('message', message => {
         .addField("Boutique Graphisme: \n -Banniére: 2€ texte 2D / 2€50 texte 3D \n -Logo: 1€ \n -Miniature: 1€50");
         message.channel.sendEmbed(help_embed);
         console.log("Commande Boutique demandée !");
+    }
+    
+    if(command === prefix + "kick") {
+        // Cette commande est réservé aux Administrateurs et Modérateurs 
+        if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
+          return message.reply("Désolé tu n'a pas la permission !");
+        
+        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+        if(!member)
+          return message.reply("Please mention a valid member of this server");
+        if(!member.kickable) 
+          return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+        
+        // slice(1) removes the first part, which here should be the user mention or ID
+        // join(' ') takes all the various parts to make it a single string.
+        let reason = args.slice(1).join(' ');
+        if(!reason) reason = "No reason provided";
+        
+        // Now, time for a swift kick in the nuts!
+        await member.kick(reason)
+          .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
+        message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
     }
 /// commande youtube
     if (message.content === prefix+"youtube"){
