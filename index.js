@@ -116,11 +116,17 @@ bot.on('message', message => {
         message.reply("Bonjour comment vas tu ?.");
         console.log("Commande Salut effectué");
     }
-/// commande Salut
-if (message.content === "Slt"){
+/// commande Slt
+    if (message.content === "Slt"){
     message.reply("Bonjour comment vas tu ?.");
     console.log("Commande Salut effectué");
-}
+    }
+/// commande slt
+    if (message.content === "slt"){
+    message.reply("Bonjour comment vas tu ?.");
+    console.log("Commande Salut effectué");
+    }
+    
     if (message.content === "bien et toi"){
         message.reply("bien merci");
         console.log("Commande effectué");
